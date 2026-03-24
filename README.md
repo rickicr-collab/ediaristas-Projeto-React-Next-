@@ -40,6 +40,18 @@ ediaristas/
 
 ---
 
+## 🤝 Contribuição
+
+Contribuições são bem-vindas!
+
+Faça um fork do projeto
+Crie uma branch (git checkout -b feature/minha-feature)
+Commit suas mudanças
+Push para a branch
+Abra um Pull Request
+
+---
+
 ## ⚙️ Scripts Disponíveis
 
 No diretório do projeto, você pode executar:
@@ -73,17 +85,7 @@ npm install
 npm run dev
 
 
----
 
-## 🤝 Contribuição
-
-Contribuições são bem-vindas!
-
-Faça um fork do projeto
-Crie uma branch (git checkout -b feature/minha-feature)
-Commit suas mudanças
-Push para a branch
-Abra um Pull Request
 
 
 
