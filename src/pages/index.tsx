@@ -1,12 +1,21 @@
-import { Button } from "@mui/material";
+import { GetStaticProps } from "next";
 
 
 
-export default function Home() {
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      title: "Encontre uma diarista perto de você",
+
+    },
+  }
+}
+
+export default function Index() {
   return (
-  <>
-  <h1>Home</h1>
-  <Button variant = {'contained'}>Hello World</Button>
-  </>
+  <div>
+   <h1>Home</h1>
+  </div>
   );
 }
