@@ -1,33 +1,28 @@
 import { ThemeProvider } from "@mui/material/styles";
 import type { AppProps } from "next/app";
-import Head from "next/head";
 import { useEffect } from "react";
-import "../ui/styles/globals.css";
-import theme from '../ui/themes/theme';
+import Footer from "../ui/components/surfaces/Footer/Footer";
+import Header from "../ui/components/surfaces/Header/Header";
+import { AppContainer } from "../ui/styles/pages/_app.styled";
+import theme from "../ui/themes/theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
-
-
-
   useEffect(() => {
-    document.querySelector('#jss-server-side')?.remove();
-  }, []);
-
+    document.querySelector("#jss-server-side")?.remove();
+  });
   return (
     <>
-      <Head>
-        <title>E-diaristas</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-        />
-      </Head>
-      <ThemeProvider theme={theme}> 
-      <Component {...pageProps} />
+      <head>
+        <title>E-diaristas {pageProps.title && ` - ${pageProps.title}`}</title>
+      </head>
+      <ThemeProvider theme={theme}>
+        <AppContainer>
+          <Header />
+          <Component {...pageProps} />
+          <Footer />
+        </AppContainer>
       </ThemeProvider>
     </>
   );
 }
-
 export default MyApp;

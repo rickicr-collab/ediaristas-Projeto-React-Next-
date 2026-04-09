@@ -1,9 +1,9 @@
 import {
-    Container,
-    IconButton,
-    List,
-    ListItem,
-    Typography,
+  Container,
+  IconButton,
+  List,
+  ListItem,
+  Typography,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
@@ -11,6 +11,7 @@ export const FooterContainer = styled("footer")`
   background-color: ${({ theme }) => theme.palette.primary.main};
   color: ${({ theme }) => theme.palette.primary.contrastText};
   padding: ${({ theme }) => theme.spacing(4)}0;
+  margin-top: auto;
 `;
 
 export const FooterTitle = styled(Typography)`
