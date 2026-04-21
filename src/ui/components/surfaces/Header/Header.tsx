@@ -1,26 +1,37 @@
 import useIsMobile from "@/data/hooks/useIsMobile";
 import {
-    Container,
-    Divider,
-    IconButton,
-    MenuItem,
-    MenuList,
-    Toolbar
+  Container,
+  Divider,
+  IconButton,
+  MenuItem,
+  MenuList,
+  Toolbar
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RoundedButton from "../../inputs/RoudedButton/RoundedButton";
 import Link from "../../navigations/Link/Link";
 import {
-    ButtonsContainer,
-    HeaderAppBar,
-    HeaderDrawer,
-    HeaderLogo,
+  ButtonsContainer,
+  HeaderAppBar,
+  HeaderDrawer,
+  HeaderLogo,
 } from "./Header.style";
 
 const Header = () => {
+  const [mounted, setMounted] = useState(false);
   const isMobile = useIsMobile();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if(!mounted){
+    return <HeaderDesktop/>
+  }; 
   return isMobile ? <HeaderMobile /> : <HeaderDesktop />;
 };
+
+
 
 const HeaderDesktop = () => {
  
@@ -37,14 +48,14 @@ const HeaderDesktop = () => {
         <div>&nbsp;</div>
         <ButtonsContainer>
           <RoundedButton
-            Component={Link}
+            component={Link}
             href={"/cadastro/diarista"}
             color="primary"
             variant="contained"
           >
             seja um(a) diarista
           </RoundedButton>
-          <RoundedButton Component={Link} href={"/login"}>
+          <RoundedButton component={Link} href={"/login"}>
             Login
           </RoundedButton>
         </ButtonsContainer>
@@ -67,7 +78,7 @@ const HeaderMobile = () => {
         </IconButton>
         <Link href={"/"}>
           <HeaderLogo
-            src={"./img/logos/logo.svg"}
+            src={"/img/logos/logo.svg"}
             alt="e-diaristas"
           ></HeaderLogo>
         </Link>
@@ -77,13 +88,13 @@ const HeaderMobile = () => {
           onClick={() => setDrawerOpen(false)}
         >
           <MenuList>
-            <Link href={"/"} Component={MenuItem} color="inherit" onClick={() => setDrawerOpen(false)}>
+            <Link href={"/"} component={MenuItem} color="inherit" onClick={() => setDrawerOpen(false)}>
               Login
             </Link>
             <Divider />
             <Link
               href={"/cadastro/diarista"}
-              Component={MenuItem}
+              component={MenuItem}
               color="inherit"
               onClick={() => setDrawerOpen(false)}
             >
