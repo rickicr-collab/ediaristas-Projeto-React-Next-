@@ -4,13 +4,13 @@ import React from 'react';
 
 type Props = NextLinkProps & Omit<MuiLinkProps, 'href' | 'component'> & {
     children: React.ReactNode;
-    Component?: React.ElementType;
+    component?: React.ElementType;
     
 }
 
-const Link: React.FC<Props> = ({children, href, sx, Component, ...props}) => {
+const Link: React.FC<Props> = ({children, href, sx, component, ...props}) => {
     return (
-        <MuiLink component={Component || NextLink} href={href}  {...props} sx={{cursor: 'pointer', ...sx}} >
+        <MuiLink component={component || NextLink} href={href}  {...props} sx={{cursor: 'pointer', ...sx}} >
             {children}
         </MuiLink>
     )
