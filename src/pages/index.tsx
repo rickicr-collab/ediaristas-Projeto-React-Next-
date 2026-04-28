@@ -1,3 +1,6 @@
+import Advantages from "@/ui/partials/index/_advantages";
+import FrequentQuestions from "@/ui/partials/index/_frequent-questions";
+import Presentation from "@/ui/partials/index/_presentation";
 import { GetStaticProps } from "next";
 
 
@@ -15,7 +18,9 @@ export const getStaticProps: GetStaticProps = async () => {
 export default function Index() {
   return (
   <div>
-   <h1>Home</h1>
+   <Presentation/>
+   <Advantages/>
+   <FrequentQuestions/>
   </div>
   );
 }
