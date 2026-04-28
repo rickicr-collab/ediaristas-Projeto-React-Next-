@@ -3,7 +3,7 @@ import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 import React from 'react';
 
 type Props = NextLinkProps & Omit<MuiLinkProps, 'href' | 'component'> & {
-    children: React.ReactNode;
+    children?: React.ReactNode;
     component?: React.ElementType;
     
 }
