@@ -47,6 +47,17 @@ const theme = createTheme({
     },
     shape: {
         borderRadius: 3
+    },
+
+    components: {
+        MuiTypography: {
+            styleOverrides: {
+                root: {
+                    border: 0,
+                    borderRadius: 0,
+                }
+            }
+        }
     }
 })
 
