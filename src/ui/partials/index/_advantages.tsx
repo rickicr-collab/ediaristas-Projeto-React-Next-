@@ -1,12 +1,12 @@
 import { Container, ListItem, ListItemAvatar } from "@mui/material";
 import React from "react";
 import {
-    AdvantagesAvatar,
-    AdvantagesItemText,
-    AdvantagesList,
-    GradientBackground,
-    ListDivider,
-    SectionTitle,
+  AdvantagesAvatar,
+  AdvantagesItemText,
+  AdvantagesList,
+  GradientBackground,
+  ListDivider,
+  SectionTitle,
 } from "./_advantages.styled";
 
 const ListAdvantages = [
@@ -46,7 +46,7 @@ const Advantages = () => {
   return (
     <GradientBackground>
       <Container>
-        <SectionTitle>Porque usar o E-diaristas!</SectionTitle>
+        <SectionTitle>Porque usar o E-diaristas?</SectionTitle>
         <AdvantagesList>
           {ListAdvantages.map((item, index) => (
             <React.Fragment key={item.icon}>
